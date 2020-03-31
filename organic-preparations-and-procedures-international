@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" demote-non-dropping-particle="sort-only" default-locale="en-GB">
+  <!-- This style was edited with the Visual CSL Editor (https://editor.citationstyles.org/visualEditor/) -->
+  <info>
+    <title>Organic Preparations and Procedures International</title>
+    <id>http://www.zotero.org/styles/organic-preparations-and-procedures-international</id>
+    <link href="http://www.zotero.org/styles/organic-preparations-and-procedures-international" rel="self"/>
+    <link href="https://www.tandfonline.com/action/authorSubmission?show=instructions&amp;journalCode=uopp20#style" rel="documentation"/>
+    <author>
+      <name>Kuldeep Singh</name>
+      <email>singh@orgsyn.in</email>
+    </author>
+    <contributor>
+      <email>singh@orgsyn.in</email>
+      <name>Kuldeep Singh</name>
+    </contributor>
+    <category citation-format="numeric"/>
+    <category field="chemistry"/>
+    <issn>0030-4948 </issn>
+    <issn>1945-5453</issn>
+    <summary>Organic Preparations and Procedures International</summary>
+    <updated>2020-03-31T08:53:14+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <macro name="author">
+    <names variable="author" suffix=", ">
+      <name and="text" delimiter-precedes-et-al="never" initialize-with=". " sort-separator=""/>
+    </names>
+  </macro>
+  <macro name="access">
+    <choose>
+      <if variable="volume"/>
+      <else-if variable="DOI">
+        <text variable="DOI" prefix="doi:"/>
+      </else-if>
+      <else-if variable="URL">
+        <text term="at"/>
+        <text variable="URL" prefix=" &lt;" suffix="&gt;"/>
+      </else-if>
+    </choose>
+  </macro>
+  <macro name="issuance">
+    <choose>
+      <if type="bill book graphic legal_case legislation motion_picture report song" match="any">
+        <group suffix=".">
+          <text variable="publisher" suffix=","/>
+          <text variable="publisher-place" suffix=", "/>
+          <date date-parts="year" variable="issued" prefix="(" suffix=")">
+            <date-part name="year"/>
+          </date>
+        </group>
+      </if>
+      <else>
+        <date prefix=" (" suffix=")." variable="issued">
+          <date-part name="year"/>
+        </date>
+      </else>
+    </choose>
+  </macro>
+  <citation collapse="citation-number">
+    <sort>
+      <key variable="citation-number"/>
+    </sort>
+    <layout vertical-align="sup" delimiter=",">
+      <text variable="citation-number"/>
+    </layout>
+  </citation>
+  <bibliography et-al-min="6" et-al-use-first="1" second-field-align="flush" entry-spacing="0">
+    <layout>
+      <text variable="citation-number" suffix="."/>
+      <text macro="author"/>
+      <text variable="container-title" form="short" font-style="italic" prefix=" " suffix=", "/>
+      <text variable="volume" suffix=", " font-weight="bold"/>
+      <text variable="page-first" suffix=", "/>
+      <text macro="issuance"/>
+      <text macro="access"/>
+    </layout>
+  </bibliography>
+</style>
